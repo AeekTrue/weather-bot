@@ -1,0 +1,4 @@
+pytelegrambotapi
+gunicorn
+uvicorn
+fastapi
