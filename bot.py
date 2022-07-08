@@ -3,7 +3,7 @@ from telebot import types
 
 import settings
 from bot_keyboards import main_keyboard
-
+from log import logger
 bot = telebot.TeleBot(settings.TOKEN)
 
 
@@ -19,3 +19,8 @@ def start(msg: types.Message):
 @bot.message_handler(commands=['howisweather'])
 def weather(msg: types.Message):
 	bot.send_message(msg.chat.id, "This feature coming soon.")
+
+
+@bot.message_handler()
+def default(msg: types.Message):
+	logger.debug(msg.json())
