@@ -2,3 +2,4 @@ pytelegrambotapi
 gunicorn
 uvicorn
 fastapi
+loguru
