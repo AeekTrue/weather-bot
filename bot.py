@@ -4,7 +4,9 @@ from telebot import types
 import settings
 from bot_keyboards import main_keyboard
 from log import logger
+
 bot = telebot.TeleBot(settings.TOKEN)
+logger.success("Telegram bot is running!")
 
 
 @bot.message_handler(commands=['start'])
@@ -23,4 +25,4 @@ def weather(msg: types.Message):
 
 @bot.message_handler()
 def default(msg: types.Message):
-	logger.debug(msg.json())
+	logger.info(msg.json())
